@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+    crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body>
+  <main role="main" class="container">
+    <h1>
+      Hi, I am happy
+    </h1>
+    <div class="alert alert-info" id="warning_message">
+    </div>
+    <div class="form-group">
+      <button class="btn btn-primary" id="connect_wallet_button" onclick="loadWeb3()">Connect Wallet</button>
+      <span id="account_address"></span>
+    </div>
+    <div class="form-group">
+      <button class="btn btn-primary" id="transfer_button" onclick="doTransfer('0x79b0b5aDEF94d3768D40e19d9D53406A8933c025')">Do transfer</button>
+    </div>
+    <div>
+      <h3>Sign a message using your account</h2>
+        <div class="form-group">
+          <label for="message_sign">Message to sign:</label>
+          <textarea class="form-control" id="message_to_sign" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+          <button class="btn btn-primary" id="sign_message_button" onclick="doSign()">Sign Message</button>
+        </div>
+        <div class="form-group">
+          <label for="signature_output">Signature Output:</label>
+          <div class="alert alert-secondary code" id="signature_output" style="word-wrap: break-word"></div>
+        </div>
+      </div>
+      <hr>
+      <div>
+        <h3>Verify a message was signed by an account</h2>
+          <div class="form-group">
+            <label for="message_verify">Message to verify:</label>
+            <textarea class="form-control" id="message_to_verify" rows="3"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="signature">Signature:</label>
+            <input class="form-control" type="text" id="signature">
+          </div>
+          <div class="form-group">
+            <button class="btn btn-primary" id="verify_message_button" onclick="doVerify()">Verify Message</button>
+          </div>
+        <div class="form-group">
+          <label for="signature_output">Signing Address:</label>
+          <div class="alert alert-secondary code" id="signing_address_output"></div>
+        </div>
+      </div>
+    </main>
+    <script src="web3.min.js""></script>
+    <script src="bundle.js""></script>
+</body>
+</html>
